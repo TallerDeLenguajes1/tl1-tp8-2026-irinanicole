@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
-using System.Security.AccessControl;
-using EspacioTarea;
+﻿using EspacioTarea;
 
 /*
 // CREAR LISTA VACÍA
@@ -43,21 +40,12 @@ void CargarListaPendientes (List<Tarea> listaPendientes, int n)
     }
 }
 
-void MostrarTarea (Tarea t)
-{
-    Console.WriteLine("--------------------");
-    Console.WriteLine($"Tarea ID: [{t.TareaId}]");
-    Console.WriteLine($"Descripción: \'{t.Descripcion}\'");
-    Console.WriteLine($"Duración: {t.Duracion} días");
-    Console.WriteLine("--------------------");
-}
-
 void MostrarLista (string tipoLista, List<Tarea> listaTareas)
 {
     Console.WriteLine($"\nLISTA: Tareas {tipoLista}");
     foreach (Tarea t in listaTareas)
     {
-        MostrarTarea(t);
+        t.MostrarTarea();
     }
 }
 
@@ -125,7 +113,7 @@ void Operacion_BuscarTareaPorDescripcionEnPendientes (List<Tarea> listaPendiente
     if ( tareaEncontrada != null )
     {
         Console.ForegroundColor = ConsoleColor.DarkYellow;
-        MostrarTarea(tareaEncontrada);
+        tareaEncontrada.MostrarTarea();
         Console.WriteLine("\nEstado: PENDIENTE");
         Console.ResetColor();
     }
@@ -242,13 +230,7 @@ if (tareasPendientes.Count() == cantidadTareas)
 
     Console.ForegroundColor = ConsoleColor.DarkMagenta;
     Console.WriteLine("\n---> FIN DEL PROGRAMA 1 <---\n");
-
-    //
-    Console.ForegroundColor = ConsoleColor.DarkBlue;
-    Console.WriteLine("\nPRESIONE UNA TECLA PARA CONTINUAR:");
-    Console.ReadKey();
     Console.ResetColor();
-    //
 }
 else
 {
@@ -256,3 +238,10 @@ else
     Console.WriteLine("\nNo se pudo cargar correctamente la lista.");
     Console.ResetColor();
 }
+
+//
+Console.ForegroundColor = ConsoleColor.DarkBlue;
+Console.WriteLine("\nPRESIONE UNA TECLA PARA CONTINUAR:");
+Console.ReadKey();
+Console.ResetColor();
+//

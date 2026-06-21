@@ -39,6 +39,15 @@ namespace EspacioTarea
             set => duracion = value; 
         }
 
+        public void MostrarTarea()
+        {
+            Console.WriteLine("--------------------");
+            Console.WriteLine($"Tarea ID: [{TareaId}]");
+            Console.WriteLine($"Descripción: \'{Descripcion}\'");
+            Console.WriteLine($"Duración: {Duracion} días");
+            Console.WriteLine("--------------------");
+        }
+
     }
 
 }
