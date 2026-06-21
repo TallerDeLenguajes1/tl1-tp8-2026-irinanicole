@@ -59,7 +59,7 @@ bool MoverTareaAListaRealizadas(List<Tarea> listaPendientes, List<Tarea> listaRe
     { return false; }
 }
 
-Tarea BuscarTarea (List<Tarea> listaPendientes, string tBuscada)
+Tarea? BuscarTarea (List<Tarea> listaPendientes, string tBuscada)
 {
     foreach (Tarea t in listaPendientes)
     {
